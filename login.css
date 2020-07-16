@@ -17,6 +17,7 @@ body
     position: relative;
     margin: 5% auto;
     height: 400px;
+    width: 2px;
     background-color: #2fb90c;
     box-shadow: 0 2px 4px rgba(red, green, blue, alpha);
 
@@ -98,4 +99,57 @@ input[type="submit"]:focus
     background-image: url(https://previews.123rf.com/images/blueskyimage/blueskyimage1409/blueskyimage140900242/31664714-three-kids-using-computer-on-white-background-nice-children-playing-with-laptop-and-smiling.jpg);
     background-size: cover;
     background-position: center;
+}
+
+.or
+{
+    position: absolute;
+    top: 180px;
+    left: 280px;
+    width: 40px;
+    height: 40px;
+    background: #eeffee;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(red, green, blue, alpha);
+    line-height: 40px;
+    text-align: center;
+}
+
+.right-box .signinwith
+{
+    display: block;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(red, green, blue, alpha);
+}
+
+
+button.social
+{
+    margin-bottom: 20px;
+    width: 220px;
+    height: 36px;
+    border: none;
+    border-radius: 2px;
+    color: #fff;
+    font-family: sans-serif;
+    font-weight: 500;
+    transition: 0.2s ease;
+    cursor: pointer;
+}
+
+.facebook
+{
+
+    background: #32508e;
+}
+.twitter
+{
+    background: #55acee;
+}
+.google
+{
+    background: #dd4b39;
 }

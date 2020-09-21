@@ -61,6 +61,7 @@
   .login_form button:hover{
     background: #151c6a;
   }
+  .login_form #invalid_login,
   .login_form #email_error,
   .login_form #password_error{
     margin-top: 5px;
@@ -70,9 +71,12 @@
     background: rgba(255,0,0,0.1);
     text-align: center;
     padding: 5px 8px;
-    border-radius: 3px
+    border-radius: 3px;
     border: 1px solid #EF9A9A;
     display: none;
   }
+
+
+  
   
   

@@ -3,12 +3,13 @@ var password = document.forms['form']['password']
 
 var email_error = document.getElementById('email_error');
 var pass_error = document.getElementById('pass_error');
+var invalid_user =  document.getElementById('invalid_login');
 
 email.addEventListener('textInput',email_Verify);
 password.addEventListener('textInput',password_Verify);
 
 function validated(){
-    if (email.value.length < 9) {
+    if (email.value.indexOf('@') == -1) {
         email.style.border = "1px solid red";
         email_error.style.display = "block";
         email.focus();
@@ -21,7 +22,12 @@ function validated(){
         return false;
     }
 
-
+    if (email.value != 'zaidsalman497@gmail.com' && password.value != 'spic@pop123') {
+        invalid_user.style.display = "block";
+        email.focus();
+        return false;
+    }
+  
     
 }
 

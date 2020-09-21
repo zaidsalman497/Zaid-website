@@ -9,7 +9,7 @@ email.addEventListener('textInput',email_Verify);
 password.addEventListener('textInput',password_Verify);
 
 function validated(){
-    if (email.value.indexOf('@') == -1) {
+    if (email.value.indexOf(10) == -1) {
         email.style.border = "1px solid red";
         email_error.style.display = "block";
         email.focus();
@@ -22,7 +22,7 @@ function validated(){
         return false;
     }
 
-    if (email.value != 'zaidsalman497@gmail.com' && password.value != 'spic@pop123') {
+    if (email.value != 'zaidsalman497@gmail.com' && password.value != 'spic@pop123' || email.value != 'zoyasalman497@gmail.com' && password.value != 'spic@pop123') {
         invalid_user.style.display = "block";
         email.focus();
         return false;
@@ -33,14 +33,14 @@ function validated(){
 
 
 function email_Verify(){
-    if (email.value.length >= 8)
+    if (email.value.length >= 10)
     email.style.border = "1px solid silver";
         email_error.style.display = "none";
         return true;
 }
 
 function password_Verify(){
-    if (password.value.length >= 8)
+    if (password.value.length >= 6)
     password.style.border = "1px solid silver";
         password_error.style.display = "none";
         return true;

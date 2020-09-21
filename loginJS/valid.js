@@ -9,7 +9,7 @@ email.addEventListener('textInput',email_Verify);
 password.addEventListener('textInput',password_Verify);
 
 function validated(){
-    if (email.value.indexOf(10) == -1) {
+    if (email.value.length < 10) {
         email.style.border = "1px solid red";
         email_error.style.display = "block";
         email.focus();
@@ -22,13 +22,34 @@ function validated(){
         return false;
     }
 
-    if (email.value != 'zaidsalman497@gmail.com' && password.value != 'spic@pop123' || email.value != 'zoyasalman497@gmail.com' && password.value != 'spic@pop123') {
+    if (!isUserNameAndPasswordValid(email.value, password.value)) {
         invalid_user.style.display = "block";
         email.focus();
         return false;
     }
   
     
+}
+
+function isUserNameAndPasswordValid(username, password) {
+    var isValid = false;
+    var listOfValidUserNameAndPassword = validUserNamesAndPasswords();
+    listOfValidUserNameAndPassword.forEach(obj => {
+        if(obj.username == username && obj.password == password) {
+            isValid = true;
+        }
+    });
+
+    return isValid;
+}
+
+function validUserNamesAndPasswords() {
+
+    return [ 
+                { username: 'zaidsalman497@gmail.com', password: 'spic@pop123'},
+                { username: 'zoyasalman497@gmail.com', password: 'spic@pop123'},
+                { username: 'salman497@hotmail.com', password: '1234567'}
+          ];
 }
 
 

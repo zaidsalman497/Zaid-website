@@ -1,24 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Zaid login page</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-<div class="container">
-     <h1 class="label">Zaid Login</h1>
-     <form class="login_form" action= "website.html" method="post" name="form" onsubmit="return validated()">
-         <div class="font">Email or phone number</div>
-         <input autocomplete="off" type="text" name="email">
-         <div id="email_error">Email or Phone number is incorrect</div>
-         <div class="font font2">Password</div>
-         <input type="password" name="password">
-         <div id="password_error">Password is incorrect</div>
-         <button type="submit">Sign in</button>   
-         <div id="invalid_login">User name or password is in correct.</div>
-     </form>
-</div>
-<script src="valid.js"></script>
-</body>    
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+   <link rel="stylesheet" href="style.css">
+ </head>
+
+ <body>
+
+  <div id="login" class="form-container">
+     <h1 class="header">Login</h1>
+     <script src="login.js"></script>
+     <hr>
+     <div id="email" class="form-group" data-step="1">
+       <label for="email-input">Enter your Email</label>
+       <input id="email-input" class="form-control" type="text">
+     </div>
+     <div id="password" class="form-group final" data-step="2">
+      <label for="password-input">Enter your Password</label>
+      <input id="password-input" class="form-control" type="Password">
+  </div>
+    
+    <p id="error-message"></p>
+
+    <button class="btn btn-primary" id="next-button">Next</button>
+
+    <div id="back-button">&#8592;</div>
+
+    <div class="info-section">
+      
+      <p>Don't have a account yet?</p>
+      <a href="signup.html">Sign up for free!</a>
+
+     </div>
+   </div>
+  </body>
 </html>

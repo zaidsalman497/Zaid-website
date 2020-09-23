@@ -1,7 +1,7 @@
 class AppForm {
     constructor() {
-        this.Form = [];
-        this.step = 1;
+        this.form = [];
+        this.step = 0;
         this.currentGroup = null;
 
         this.setListener();
@@ -15,10 +15,12 @@ class AppForm {
     }
 
     displayStep = () => {
-        if(this.currentGroup)
-        this.currentGroup.style.display = 'none';
+        if(this.currentGroup) { 
+            this.currentGroup.element.style.display = 'none';
+        }
+        
         this.currentGroup = this.form.find(_group => _group.step === this.step);
-        this.currentGroup.style.display = 'block'
+        this.currentGroup.element.style.display = 'block'
     }
 
     getForm = () => {

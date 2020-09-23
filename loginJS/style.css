@@ -20,6 +20,10 @@ body{
     color: white;
 }
 
+.form-group {
+    display: none;
+}
+
 #next-button{
     width: 100%;
 }

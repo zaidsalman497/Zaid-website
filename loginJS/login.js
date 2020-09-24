@@ -15,14 +15,15 @@ class AppForm {
 
     currentInput = () => this.form[this.step - 1].input;
     previousInput = () => this.form[this.step - 2].input;
-        
+
     check = () => this.currentInput().addEventListener('keyup', this.enableDisable);
 
     enableDisable = () => {
-        if(this.valid(this.currentInput())) {
+        if (this.valid(this.currentInput())) {
             this.currentInput().classList.remove('invalid');
+            this.setListener();
             document.getElementById('next-button').disabled = false;
-        }   else {
+        } else {
             this.currentInput().classList.add('invalid');
             this.removeListeners();
             document.getElementById('next-button').disabled = true;
@@ -34,42 +35,44 @@ class AppForm {
         let value = input.value;
         let empty = (str) => !str.split('').every(_char => _char !== ' ');
 
-        if(!value || empty(value)) return false
+        if (!value || empty(value)) {
+            return false;
+        } 
 
         switch(formType) {
-                     case 'email-input':
-                     return /\S+@\S+\.\S+/.test(value)
 
-                    case 'email-verification-input':
-                    return this.previousInput.value === value;
+            case 'email-input':
+                return /\S+@\S+\.\S+/.test(value)
 
-                    case 'password-input':
-                    return /(?=.*\d)(?=.*[a-z](?=.*[A-Z])[a-zA-Z0-9@$&!]/.test(value)
+            case 'email-verification-input':
+                return this.previousInput.value === value;
 
-                    case 'password-verification-input':
-                        return this.previousInput.value === value;;
+            case 'password-input':
+                return RegExp('(?=.*\d)(?=.*[a-z](?=.*[A-Z])[a-zA-Z0-9@$&!]').test(value);
 
-                        default:
-                            return false;
+            case 'password-verification-input':
+                return this.previousInput.value === value;
 
-                    
+            default:
+                return false;
         }
     };
-    
+
     refresh = () => {
         this.step++;
-        if(this.step <= this.form.length)
-        this.displayStep();
+        if (this.step <= this.form.length)
+            this.displayStep();
         else
             this.submit();
     }
+
     displayStep = () => {
-        if(this.currentGroup)
-        this.currentGroup.style.element.display = 'none'
-        this.currentGroup = this.form.find(_group => _group.step).element;
-        this.currentGroup.style.element.display = 'block'
+        if (this.currentGroup)
+        this.currentGroup.element.style.display = 'none'
+        this.currentGroup = this.form.find(_group => _group.step == this.step);
+        this.currentGroup.element.style.display = 'block'
     }
-    
+
 
     getForm = () => {
         const groups = Array.from(document.getElementsByClassName('form-group'));
@@ -89,14 +92,14 @@ class AppForm {
         button.addEventListener('click', this.refresh);
     }
     removeListeners = () => {
-        document.getElementById('next-button').removeEventListener('click', this.refresh) ;
+        document.getElementById('next-button').removeEventListener('click', this.refresh);
     }
 
     newMethod() {
         return 'input';
     }
-  }
+}
 
-$(document).ready(function() {
+$(document).ready(function () {
     new AppForm();
 });

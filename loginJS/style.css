@@ -24,6 +24,14 @@ body{
     display: none;
 }
 
+#next-button:disabled{
+    cursor: not-allowed;
+}
+
+.invalid {
+    border: 2px solid red !important;
+}
+
 #next-button{
     width: 100%;
 }

@@ -9,7 +9,6 @@
     <body>
         <div id="signup" class="form-container">
             <h1 class="header">Sign up</h1>
-            <script src="login.js"></script>
             <hr>
 
 
@@ -17,11 +16,12 @@
              <label for="email-input">Enter your Email</label>
              <input id="email-input" type="text" class="form-control">
             </div>
-            
+
             <div id="email-verification" class="form-group" data-step="2">
-            <label for="email-verification-input">Confirm your email</label>
-            <input id="email-verification-input" type="text" class="form-control">
+                <label for="email-verification-input">Confirm your Email</label>
+                 <input id="email-verification-input" type="text" class="form-control">
             </div>
+
             <div id="password" class="form-group" data-step="3">
                <p class="password-requirements">
                 Password can not contain spaces.
@@ -32,11 +32,11 @@
                </p>
                <label for="password-input">Create a password</label>
                <input id="password-input" type="password" class="form-control">
+            </div>
 
             <div id="password-verification" class="form-group final" data-step="4">
                 <label for="password-verification-input">Confirm your password</label>
                  <input id="password-verification-input" type="password" class="form-control">
-            </div>
             </div>
 
              <p id="error-message"></p>
@@ -51,5 +51,6 @@
           </div>
 
         </div>
+        <script src="login.js"></script>
     </body>
 </html>

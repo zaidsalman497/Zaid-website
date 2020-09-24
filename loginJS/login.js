@@ -3,6 +3,7 @@ class AppForm {
         this.form = [];
         this.step = 0;
         this.currentGroup = null;
+        this.passwordRegexValidation = /(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}/;
 
         this.setListener();
         this.getForm();
@@ -45,13 +46,13 @@ class AppForm {
                 return /\S+@\S+\.\S+/.test(value)
 
             case 'email-verification-input':
-                return this.previousInput.value === value;
+                return this.previousInput().value === value;
 
             case 'password-input':
-                return RegExp('(?=.*\d)(?=.*[a-z](?=.*[A-Z])[a-zA-Z0-9@$&!]').test(value);
+                return this.passwordRegexValidation.test(value);
 
             case 'password-verification-input':
-                return this.previousInput.value === value;
+                return this.previousInput().value === value;
 
             default:
                 return false;
@@ -65,10 +66,12 @@ class AppForm {
             this.removeListeners();
             document.getElementById('next-button').disabled = true;
             this.check();
-            }
+            
+        } else {
+            this.submit()
         }
-        else
-             this.submit()
+    }
+             
 
     displayStep = () => {
         if (this.currentGroup)

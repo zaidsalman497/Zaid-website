@@ -60,16 +60,20 @@ class AppForm {
 
     refresh = () => {
         this.step++;
-        if (this.step <= this.form.length)
+        if (this.step <= this.form.length) {
             this.displayStep();
+            this.removeListeners();
+            document.getElementById('next-button').disabled = true;
+            this.check();
+            }
+        }
         else
-            this.submit();
-    }
+             this.submit()
 
     displayStep = () => {
         if (this.currentGroup)
             this.currentGroup.element.style.display = 'none'
-        this.currentGroup = this.form.find(_group => _group.step == this.step);
+        this.currentGroup = this.form.find(group => group.step == this.step);
         this.currentGroup.element.style.display = 'block'
     }
 

@@ -37,9 +37,9 @@ class AppForm {
 
         if (!value || empty(value)) {
             return false;
-        } 
+        }
 
-        switch(formType) {
+        switch (formType) {
 
             case 'email-input':
                 return /\S+@\S+\.\S+/.test(value)
@@ -68,7 +68,7 @@ class AppForm {
 
     displayStep = () => {
         if (this.currentGroup)
-        this.currentGroup.element.style.display = 'none'
+            this.currentGroup.element.style.display = 'none'
         this.currentGroup = this.form.find(_group => _group.step == this.step);
         this.currentGroup.element.style.display = 'block'
     }

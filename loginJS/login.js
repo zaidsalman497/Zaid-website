@@ -36,7 +36,7 @@ class AppForm {
         let value = input.value;
         let empty = (str) => !str.split('').every(_char => _char !== ' ');
 
-        if (!value || empty(value)) return false; {
+        if (!value || empty(value)) return false; 
         if (this.pageType === 'login') return value && !empty(value);
         
 
@@ -57,7 +57,8 @@ class AppForm {
             default:
                 return false;
         }
-    };
+    }
+
     goBack = () => {
         if(this.step > 1) {
             this.currentInput().value = ''
@@ -104,6 +105,9 @@ class AppForm {
 
 
     setListener = () => {
+        document.getElementById('next-button').addEventListener('click', this.refresh)
+
+        document.getElementById('back-button').addEventListener('click', this.goBack);
     }
     removeListeners = () => {
         document.getElementById('next-button').removeEventListener('click', this.refresh);

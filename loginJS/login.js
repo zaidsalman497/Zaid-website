@@ -12,7 +12,18 @@ class AppForm {
         this.check();
     }
 
-    submit = () => console.log('SUBMIT')
+    submit = () => {
+        const un = document.getElementById('email-input').value;
+        const pw = document.getElementById('password-input').value;
+
+        if(this.pageType === 'login') {
+
+        } else if(this.pageType === 'signup') {
+            firebase.auth().createUserWithEmailAndPassword(un, pw).then(res => {
+                console.log(res);
+            });
+        }
+    }
 
     currentInput = () => this.form[this.step - 1].input;
     previousInput = () => this.form[this.step - 2].input;

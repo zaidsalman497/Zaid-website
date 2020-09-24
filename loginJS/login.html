@@ -5,9 +5,25 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
    <link rel="stylesheet" href="style.css">
+
+   <script src="http://www.gstatic.com/firebasejs/5.9.2/firebase-app.js"></script>
+   <script src="http://www.gstatic.com/firebasejs/5.9.2/firebase-auth.js"></script>
+   <script>
+     const projectId = 'zaid-login'
+     const config = {
+       apiKey: 'AIzaSyDAGGzX38y8zsqrdFAP5Uqh2tOKtlm-8sg',
+       authDomain: '${projectId}.firebaseapp.com',
+       databaseURL 'http://${projectId}.firebaseio.com',
+       projectId: projectid,
+       storgeBucket: '${projectId}.appspot.com'
+       messagingSenderId: '24016897478'
+
+     }
+     firebase.initializeApp(config);
+   </script>
  </head>
  <script src="login.js" ></script>
- <body >
+ <body>
 
   <div id="login" class="form-container">
      <h1 class="header">Login</h1>

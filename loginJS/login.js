@@ -36,9 +36,9 @@ class AppForm {
         let value = input.value;
         let empty = (str) => !str.split('').every(_char => _char !== ' ');
 
-        if (!value || empty(value)) {
-            return false;
-        }
+        if (!value || empty(value)) return false; {
+        if (this.pageType === 'login') return value && !empty(value);
+        
 
         switch (formType) {
 
@@ -58,6 +58,14 @@ class AppForm {
                 return false;
         }
     };
+    goBack = () => {
+        if(this.step > 1) {
+            this.currentInput().value = ''
+            this.step--;
+            this.displayStep();
+            this.enableDisable();
+        }
+    }
 
     refresh = () => {
         this.step++;
@@ -66,6 +74,7 @@ class AppForm {
             this.removeListeners();
             document.getElementById('next-button').disabled = true;
             this.check();
+            this.pageType = window.location.href.includes('login') ? 'login' : 'signup';
             
         } else {
             this.submit()
@@ -95,8 +104,6 @@ class AppForm {
 
 
     setListener = () => {
-        var button = document.getElementById('next-button');
-        button.addEventListener('click', this.refresh);
     }
     removeListeners = () => {
         document.getElementById('next-button').removeEventListener('click', this.refresh);

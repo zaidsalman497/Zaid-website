@@ -17,10 +17,15 @@ class AppForm {
         const pw = document.getElementById('password-input').value;
 
         if(this.pageType === 'login') {
-
-        } else if(this.pageType === 'signup') {
+            firebase.auth().signInWithEmailAndPassword(un, pw).then(res => {
+                document.getElementById('error-message').innerHTML = '';
+            }, err = () => {
+                document.getElementById('error-message').innerHTML = 'Incorrect login info.';
+            })
+;        } else if(this.pageType === 'signup') {
             firebase.auth().createUserWithEmailAndPassword(un, pw).then(res => {
                 console.log(res);
+                window.location.href = '/file:///C:/zaid/github/Zaid-website/loginJS/loggedin.html#' + res.user.email;
             });
         }
     }

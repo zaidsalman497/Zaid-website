@@ -18,14 +18,14 @@ class AppForm {
 
         if(this.pageType === 'login') {
             firebase.auth().signInWithEmailAndPassword(un, pw).then(res => {
-                window.location.href = 'file:///C:/salman/code/zaid/Zaid-website/welcome/afterlogin.html#' + un;
+                window.location.href = 'file:///C:/zaid/github/Zaid-website/welcome/afterlogin.html' + un
             }, err => {
                 document.getElementById('error-message').innerHTML = 'Incorrect login, ' + err;
             })
 ;        } else if(this.pageType === 'signup') {
             firebase.auth().createUserWithEmailAndPassword(un, pw).then(res => {
                 console.log(res);
-                window.location.href = 'file:///C:/salman/code/zaid/Zaid-website/welcome/afterlogin.html#' + res.user.email;
+                window.location.href = 'file:///C:/zaid/github/Zaid-website/welcome/afterlogin.html' + res.user.email;
             });
         }
     }

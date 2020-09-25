@@ -28,6 +28,7 @@ body{
     cursor: not-allowed;
 }
 
+
 .invalid {
     border: 2px solid red !important;
 }

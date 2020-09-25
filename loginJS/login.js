@@ -86,7 +86,7 @@ class AppForm {
             this.removeListeners();
             document.getElementById('next-button').disabled = true;
             this.check();
-            this.pageType = window.location.href.includes('login') ? 'login' : 'signup';
+            this.pageType = window.location.href.includes('login.html') ? 'login' : 'signup';
             
         } else {
             this.submit()

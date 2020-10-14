@@ -2,9 +2,10 @@
   "name": "zaid-website",
   "version": "1.0.0",
   "description": "creating zaid first website",
-  "main": "index.js",
+  "main": "index.html",
   "scripts": {
-    "start": "http-server --port 4972"
+    "start": "http-server --port 4972 -o /loginJS/login.html",
+    "start:game": "http-server --port 4972 -o /birdgame/index.html"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/zaidsalman497/Zaid-website#readme",
   "dependencies": {
     "http-server": "^0.12.3"
+  },
+  "devDependencies": {
+    "start-server-and-test": "^1.11.5"
   }
 }

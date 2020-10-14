@@ -4,8 +4,8 @@
   "description": "creating zaid first website",
   "main": "index.html",
   "scripts": {
-    "start": "http-server --port 4972 -o /loginJS/login.html",
-    "start:game": "http-server --port 4972 -o /birdgame/index.html"
+    "login": "http-server --port 4972 -o /loginJS/login.html",
+    "start": "live-server --port=1263 --host=localhost --open=./birdgame/index.html"
   },
   "repository": {
     "type": "git",
